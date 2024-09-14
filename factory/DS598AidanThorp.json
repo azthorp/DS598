@@ -1,0 +1,9 @@
+{
+	"name": "DS598AidanThorp",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d1bf3923-2b03-4242-bdce-0de515a8e114",
+		"tenantId": "d57d32cc-c121-488f-b07b-dfe705680c71"
+	}
+}
