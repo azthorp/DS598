@@ -1,0 +1,17 @@
+{
+	"name": "AirPollution",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "HistoricalAirPollution",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		},
+		"schema": {}
+	}
+}

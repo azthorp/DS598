@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"activities": [
 						{
-							"name": "Copy data1",
+							"name": "Copy Pollution Data",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -37,15 +37,6 @@
 									},
 									"formatSettings": {
 										"type": "JsonReadSettings"
-									}
-								},
-								"sink": {
-									"type": "JsonSink",
-									"storeSettings": {
-										"type": "AzureBlobFSWriteSettings"
-									},
-									"formatSettings": {
-										"type": "JsonWriteSettings"
 									}
 								},
 								"enableStaging": false
