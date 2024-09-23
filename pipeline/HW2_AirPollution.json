@@ -56,7 +56,10 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://OpenWeatherAPIkey/secrets/OpenWeatherAPIKey? api-version=7.0"
+				}
 			}
 		],
 		"annotations": []

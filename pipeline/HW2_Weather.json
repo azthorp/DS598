@@ -15,6 +15,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@{dataset().lat}\n@{dataset().lon}\n@{dataset().dataType}",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "Copy Historical Data",
