@@ -58,6 +58,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"method": "GET",
 					"url": "https://OpenWeatherAPIkey/secrets/OpenWeatherAPIKey? api-version=7.0"
 				}
 			}
