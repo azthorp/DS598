@@ -55,12 +55,6 @@
 									"referenceName": "HistoricalAirPollution",
 									"type": "DatasetReference"
 								}
-							],
-							"outputs": [
-								{
-									"referenceName": "DataLake",
-									"type": "DatasetReference"
-								}
 							]
 						}
 					]

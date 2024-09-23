@@ -55,12 +55,6 @@
 									"referenceName": "HistoricalAPI",
 									"type": "DatasetReference"
 								}
-							],
-							"outputs": [
-								{
-									"referenceName": "DataLake",
-									"type": "DatasetReference"
-								}
 							]
 						}
 					]
