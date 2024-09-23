@@ -49,13 +49,7 @@
 									}
 								},
 								"enableStaging": false
-							},
-							"inputs": [
-								{
-									"referenceName": "HistoricalAPI",
-									"type": "DatasetReference"
-								}
-							]
+							}
 						}
 					]
 				}
