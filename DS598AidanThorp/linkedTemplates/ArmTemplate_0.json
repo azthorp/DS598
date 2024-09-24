@@ -509,7 +509,7 @@
 						"typeProperties": {
 							"method": "GET",
 							"headers": {},
-							"url": "https://OpenWeatherAPIkey/secrets/OpenWeatherAPIKey?api-version=7.0"
+							"url": "https://OpenWeatherAPIkey/secrets/OpenWeatherAPIKey? api-version=7.0"
 						}
 					}
 				],
