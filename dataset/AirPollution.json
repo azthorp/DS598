@@ -9,7 +9,8 @@
 		"type": "Json",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation"
+				"type": "HttpServerLocation",
+				"relativeUrl": "/data/2.5/air_pollution/forecast?lat={lat}&lon={lon}&appid={b882ff6c0fcc8c3d9e0059561a94163f}"
 			}
 		},
 		"schema": {}

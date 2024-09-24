@@ -5,11 +5,38 @@
 			"referenceName": "HistoricalWeather",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"dataType": {
+				"type": "string",
+				"defaultValue": "hour"
+			},
+			"lat": {
+				"type": "float",
+				"defaultValue": 42.36
+			},
+			"lon": {
+				"type": "float",
+				"defaultValue": 71.06
+			},
+			"appid": {
+				"type": "string",
+				"defaultValue": "@activity('Web').output"
+			},
+			"start": {
+				"type": "string",
+				"defaultValue": "@item()"
+			},
+			"end": {
+				"type": "string",
+				"defaultValue": "@add(item"
+			}
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation"
+				"type": "HttpServerLocation",
+				"relativeUrl": "data/2.5/history/city?lat=@{dataset().lat}&lon=@{data set().lon}&type=@{dataset().dataType}&start=@{dataset HW2: Historical Data Ingestion 11 ().start}&end=@{dataset().end}&appid=@{dataset().appi d}"
 			}
 		},
 		"schema": {}
