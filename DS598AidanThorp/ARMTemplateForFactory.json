@@ -309,7 +309,7 @@
 						"typeProperties": {
 							"method": "GET",
 							"headers": {},
-							"url": "https://openweatherkey.vault.azure.net/secrets/OpenWeatherAPIkey/ec9f318c4029419cbe978a522edd39bb"
+							"url": "https://openweatherkey.vault.azure.net/secrets/OpenWeatherAPIKey? api-version=7.0"
 						}
 					}
 				],
