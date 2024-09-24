@@ -20,7 +20,7 @@
 			},
 			"appid": {
 				"type": "string",
-				"defaultValue": "@activity('Web').output"
+				"defaultValue": "@activity('Web1').output.value"
 			},
 			"start": {
 				"type": "string",
@@ -28,7 +28,7 @@
 			},
 			"end": {
 				"type": "string",
-				"defaultValue": "@add(item"
+				"defaultValue": "@add(item(),604800"
 			}
 		},
 		"annotations": [],
