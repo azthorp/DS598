@@ -15,14 +15,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'credential' of 'GitHub1'"
 		},
-		"HttpServer1_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'HttpServer1'"
-		},
-		"HttpServer2_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'HttpServer2'"
-		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://aidanthorpsa.dfs.core.windows.net/"
@@ -35,19 +27,19 @@
 			"type": "string",
 			"defaultValue": "azthorp"
 		},
-		"HttpServer1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": " https://history.openweathermap.org/"
-		},
-		"HttpServer1_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "azthorp"
-		},
-		"HttpServer2_properties_typeProperties_url": {
+		"HistoricalAirPollution_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": " http://api.openweathermap.org/"
 		},
-		"HttpServer2_properties_typeProperties_userName": {
+		"HistoricalAirPollution_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "azthorp"
+		},
+		"HistoricalWeather_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://history.openweathermap.org/"
+		},
+		"HistoricalWeather_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "azthorp"
 		},
@@ -84,12 +76,6 @@
 					"GitHub1_credential": {
 						"value": "[parameters('GitHub1_credential')]"
 					},
-					"HttpServer1_password": {
-						"value": "[parameters('HttpServer1_password')]"
-					},
-					"HttpServer2_password": {
-						"value": "[parameters('HttpServer2_password')]"
-					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
 					},
@@ -99,17 +85,17 @@
 					"GitHub1_properties_typeProperties_username": {
 						"value": "[parameters('GitHub1_properties_typeProperties_username')]"
 					},
-					"HttpServer1_properties_typeProperties_url": {
-						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
+					"HistoricalAirPollution_properties_typeProperties_url": {
+						"value": "[parameters('HistoricalAirPollution_properties_typeProperties_url')]"
 					},
-					"HttpServer1_properties_typeProperties_userName": {
-						"value": "[parameters('HttpServer1_properties_typeProperties_userName')]"
+					"HistoricalAirPollution_properties_typeProperties_userName": {
+						"value": "[parameters('HistoricalAirPollution_properties_typeProperties_userName')]"
 					},
-					"HttpServer2_properties_typeProperties_url": {
-						"value": "[parameters('HttpServer2_properties_typeProperties_url')]"
+					"HistoricalWeather_properties_typeProperties_url": {
+						"value": "[parameters('HistoricalWeather_properties_typeProperties_url')]"
 					},
-					"HttpServer2_properties_typeProperties_userName": {
-						"value": "[parameters('HttpServer2_properties_typeProperties_userName')]"
+					"HistoricalWeather_properties_typeProperties_userName": {
+						"value": "[parameters('HistoricalWeather_properties_typeProperties_userName')]"
 					}
 				}
 			},

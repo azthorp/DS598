@@ -11,12 +11,6 @@
 		"GitHub1_credential": {
 			"value": ""
 		},
-		"HttpServer1_password": {
-			"value": ""
-		},
-		"HttpServer2_password": {
-			"value": ""
-		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://aidanthorpsa.dfs.core.windows.net/"
 		},
@@ -26,16 +20,16 @@
 		"GitHub1_properties_typeProperties_username": {
 			"value": "azthorp"
 		},
-		"HttpServer1_properties_typeProperties_url": {
-			"value": " https://history.openweathermap.org/"
-		},
-		"HttpServer1_properties_typeProperties_userName": {
-			"value": "azthorp"
-		},
-		"HttpServer2_properties_typeProperties_url": {
+		"HistoricalAirPollution_properties_typeProperties_url": {
 			"value": " http://api.openweathermap.org/"
 		},
-		"HttpServer2_properties_typeProperties_userName": {
+		"HistoricalAirPollution_properties_typeProperties_userName": {
+			"value": "azthorp"
+		},
+		"HistoricalWeather_properties_typeProperties_url": {
+			"value": "https://history.openweathermap.org/"
+		},
+		"HistoricalWeather_properties_typeProperties_userName": {
 			"value": "azthorp"
 		}
 	}
