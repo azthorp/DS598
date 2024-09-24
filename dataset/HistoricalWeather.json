@@ -28,7 +28,7 @@
 			},
 			"end": {
 				"type": "string",
-				"defaultValue": "@add(item(),604800"
+				"defaultValue": "@add(item(),604800)"
 			}
 		},
 		"annotations": [],
