@@ -182,13 +182,27 @@
 					"referenceName": "HistoricalAirPollution",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"lat": {
+						"type": "float",
+						"defaultValue": 42.36
+					},
+					"lon": {
+						"type": "float",
+						"defaultValue": 71.06
+					},
+					"appid": {
+						"type": "string",
+						"defaultValue": "@activity('Web1').output.value"
+					}
+				},
 				"annotations": [],
 				"type": "Json",
 				"typeProperties": {
 					"location": {
 						"type": "HttpServerLocation",
 						"relativeUrl": {
-							"value": "/data/2.5/history/city?lat=42.36&lon=71.06&appid=b882ff6c0fcc8c3d9e0059561a94163f",
+							"value": "/data/2.5/history/city?lat=@{dataset().lat}&lon=@{dataset().lon}&@{dataset().appid}",
 							"type": "Expression"
 						}
 					}
