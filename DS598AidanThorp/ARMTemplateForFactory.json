@@ -140,6 +140,14 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
+				"parameters": {
+					"Start": {
+						"type": "string"
+					},
+					"End": {
+						"type": "string"
+					}
+				},
 				"annotations": []
 			},
 			"dependsOn": [
@@ -513,6 +521,7 @@
 								"value": "@pipeline().parameters.DateRange",
 								"type": "Expression"
 							},
+							"isSequential": true,
 							"activities": [
 								{
 									"name": "Copy data1",
@@ -604,7 +613,7 @@
 				},
 				"parameters": {
 					"DateRange": {
-						"type": "string",
+						"type": "array",
 						"defaultValue": [
 							{
 								"start": "1694373328",
@@ -815,12 +824,6 @@
 								"end": "1725822928"
 							}
 						]
-					},
-					"start": {
-						"type": "string"
-					},
-					"end": {
-						"type": "string"
 					}
 				},
 				"annotations": []
@@ -906,8 +909,7 @@
 				},
 				"parameters": {
 					"dataType": {
-						"type": "string",
-						"defaultValue": "hour"
+						"type": "string"
 					},
 					"lat": {
 						"type": "float",
@@ -918,8 +920,7 @@
 						"defaultValue": -71.06
 					},
 					"appid": {
-						"type": "string",
-						"defaultValue": "@activity('Web1').output.value"
+						"type": "string"
 					},
 					"start": {
 						"type": "string"
