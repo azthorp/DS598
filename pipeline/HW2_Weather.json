@@ -19,6 +19,7 @@
 						"value": "@pipeline().parameters.DateRange",
 						"type": "Expression"
 					},
+					"isSequential": false,
 					"activities": [
 						{
 							"name": "Copy Historical Data",
