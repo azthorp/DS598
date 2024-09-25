@@ -318,10 +318,10 @@
 								"type": "DatasetReference",
 								"parameters": {
 									"lat": 42.36,
-									"lon": 71.06,
+									"lon": -71.06,
 									"appid": "@activity('Web1').output.value",
-									"start": "\"1694373328\"",
-									"end": "\"1725822928\""
+									"start": "1695696215",
+									"end": "1727318615"
 								}
 							}
 						],
@@ -361,12 +361,12 @@
 				},
 				"parameters": {
 					"Start": {
-						"type": "string",
-						"defaultValue": "[[\"start\":\"1694373328\"]"
+						"type": "int",
+						"defaultValue": 1695696215
 					},
 					"End": {
-						"type": "string",
-						"defaultValue": "[[\"end\":\"1725822928\"]"
+						"type": "int",
+						"defaultValue": 1727318615
 					}
 				},
 				"annotations": []
