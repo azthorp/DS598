@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@variables('Start')",
+						"value": "@pipeline().parameters.DateRange",
 						"type": "Expression"
 					},
 					"activities": [
@@ -63,8 +63,14 @@
 										"lat": 42.36,
 										"lon": 71.06,
 										"appid": "@activity('Web1').output.value",
-										"start": "@item()",
-										"end": "@add(item(),604800)"
+										"start": {
+											"value": "@item().start",
+											"type": "Expression"
+										},
+										"end": {
+											"value": "@item().end",
+											"type": "Expression"
+										}
 									}
 								}
 							],
@@ -100,9 +106,9 @@
 				}
 			}
 		],
-		"variables": {
+		"parameters": {
 			"DateRange": {
-				"type": "Array",
+				"type": "string",
 				"defaultValue": [
 					{
 						"start": "1695833216",
