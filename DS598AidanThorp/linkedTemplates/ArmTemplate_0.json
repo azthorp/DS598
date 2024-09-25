@@ -192,8 +192,13 @@
 						"defaultValue": 71.06
 					},
 					"appid": {
-						"type": "string",
-						"defaultValue": "b882ff6c0fcc8c3d9e0059561a94163f"
+						"type": "string"
+					},
+					"start": {
+						"type": "string"
+					},
+					"end": {
+						"type": "string"
 					}
 				},
 				"annotations": [],
@@ -315,7 +320,9 @@
 								"parameters": {
 									"lat": 42.36,
 									"lon": 71.06,
-									"appid": "@activity('Web1').output.value"
+									"appid": "@activity('Web1').output.value",
+									"start": "\"1694373328\"",
+									"end": "\"1725822928\""
 								}
 							}
 						],
