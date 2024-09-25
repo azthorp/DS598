@@ -17,6 +17,12 @@
 			"appid": {
 				"type": "string",
 				"defaultValue": "b882ff6c0fcc8c3d9e0059561a94163f"
+			},
+			"start": {
+				"type": "string"
+			},
+			"end": {
+				"type": "string"
 			}
 		},
 		"annotations": [],

@@ -19,6 +19,7 @@
 						"value": "@pipeline().parameters.DateRange",
 						"type": "Expression"
 					},
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "Copy data1",
@@ -105,7 +106,7 @@
 		],
 		"parameters": {
 			"DateRange": {
-				"type": "string",
+				"type": "array",
 				"defaultValue": [
 					{
 						"start": "1694373328",
@@ -316,12 +317,6 @@
 						"end": "1725822928"
 					}
 				]
-			},
-			"start": {
-				"type": "string"
-			},
-			"end": {
-				"type": "string"
 			}
 		},
 		"annotations": []

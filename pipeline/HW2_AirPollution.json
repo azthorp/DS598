@@ -83,6 +83,14 @@
 				}
 			}
 		],
+		"parameters": {
+			"Start": {
+				"type": "string"
+			},
+			"End": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
