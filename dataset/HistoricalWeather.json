@@ -24,11 +24,11 @@
 			},
 			"start": {
 				"type": "string",
-				"defaultValue": "@item()"
+				"defaultValue": "@item().start"
 			},
 			"end": {
 				"type": "string",
-				"defaultValue": "@add(item(),604800)"
+				"defaultValue": "@item().end"
 			}
 		},
 		"annotations": [],
