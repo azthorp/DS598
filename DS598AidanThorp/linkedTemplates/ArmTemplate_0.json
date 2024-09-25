@@ -355,10 +355,12 @@
 				},
 				"parameters": {
 					"Start": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "[[\"start\":\"1694373328\"]"
 					},
 					"End": {
-						"type": "string"
+						"type": "string",
+						"defaultValue": "[[\"end\":\"1725822928\"]"
 					}
 				},
 				"annotations": []
