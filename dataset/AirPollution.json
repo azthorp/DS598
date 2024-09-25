@@ -10,7 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "/data/2.5/history/city?lat=42.36&lon=71.06&appid=b882ff6c0fcc8c3d9e0059561a94163f"
+				"relativeUrl": {
+					"value": "/data/2.5/history/city?lat=42.36&lon=71.06&appid=b882ff6c0fcc8c3d9e0059561a94163f",
+					"type": "Expression"
+				}
 			}
 		},
 		"schema": {}
