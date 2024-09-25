@@ -108,7 +108,7 @@
 		],
 		"parameters": {
 			"DateRange": {
-				"type": "string",
+				"type": "array",
 				"defaultValue": [
 					{
 						"start": "1695833216",
