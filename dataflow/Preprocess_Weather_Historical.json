@@ -39,7 +39,7 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     documentForm: 'documentPerLine',",
-				"     wildcardPaths:[' Bronze/data/2.5/air_pollution']) ~> source1",
+				"     wildcardPaths:[' Bronze/data/2.5/air_pollution/*.json']) ~> source1",
 				"source1 foldDown(unroll(),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> flatten1",
