@@ -39,7 +39,7 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     documentForm: 'documentPerLine',",
-				"     wildcardPaths:[' data/2.5/history']) ~> source1",
+				"     wildcardPaths:[' data/2.5/history/*.json']) ~> source1",
 				"source1 foldDown(unroll(),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> flatten1",
