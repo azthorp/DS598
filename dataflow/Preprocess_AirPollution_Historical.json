@@ -19,9 +19,6 @@
 			],
 			"transformations": [
 				{
-					"name": "flatten1"
-				},
-				{
 					"name": "derivedColumn1"
 				},
 				{
@@ -32,6 +29,9 @@
 				},
 				{
 					"name": "select1"
+				},
+				{
+					"name": "flatten"
 				}
 			],
 			"scriptLines": [
@@ -44,14 +44,28 @@
 				"     inferDriftedColumnTypes: true,",
 				"     ignoreNoFilesFound: false,",
 				"     documentForm: 'documentPerLine') ~> source1",
-				"source1 foldDown(unroll(),",
-				"     skipDuplicateMapInputs: false,",
-				"     skipDuplicateMapOutputs: false) ~> flatten1",
-				"flatten1 derive() ~> derivedColumn1",
+				"flatten derive() ~> derivedColumn1",
 				"derivedColumn1 filter(ERROR_FUNCTION('')) ~> filter1",
 				"filter1 derive() ~> derivedColumn2",
 				"derivedColumn2 select(skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
+				"source1 foldDown(unroll(list, list),",
+				"     mapColumn(",
+				"          lon = coord.lon,",
+				"          lat = coord.lat,",
+				"          aqi = list.main.aqi,",
+				"          timestamp = list.dt,",
+				"          co = list.components.co,",
+				"          no = list.components.no,",
+				"          no2 = list.components.no2,",
+				"          o3 = list.components.o3,",
+				"          so2 = list.components.so2,",
+				"          pm2_5 = list.components.pm2_5,",
+				"          pm10 = list.components.pm10,",
+				"          nh3 = list.components.nh3",
+				"     ),",
+				"     skipDuplicateMapInputs: false,",
+				"     skipDuplicateMapOutputs: false) ~> flatten",
 				"select1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
