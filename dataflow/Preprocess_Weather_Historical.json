@@ -19,9 +19,6 @@
 			],
 			"transformations": [
 				{
-					"name": "flatten1"
-				},
-				{
 					"name": "derivedColumn1"
 				},
 				{
@@ -32,6 +29,12 @@
 				},
 				{
 					"name": "select1"
+				},
+				{
+					"name": "flatten2"
+				},
+				{
+					"name": "flatten3"
 				}
 			],
 			"scriptLines": [
@@ -48,14 +51,33 @@
 				"     inferDriftedColumnTypes: true,",
 				"     ignoreNoFilesFound: false,",
 				"     documentForm: 'documentPerLine') ~> source1",
-				"source1 foldDown(unroll(),",
-				"     skipDuplicateMapInputs: false,",
-				"     skipDuplicateMapOutputs: false) ~> flatten1",
-				"flatten1 derive() ~> derivedColumn1",
+				"flatten3 derive() ~> derivedColumn1",
 				"derivedColumn1 filter(ERROR_FUNCTION('')) ~> filter1",
 				"filter1 derive() ~> derivedColumn2",
 				"derivedColumn2 select(skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
+				"source1 foldDown(unroll(list, list),",
+				"     mapColumn(",
+				"          message,",
+				"          cod,",
+				"          city_id,",
+				"          calctime,",
+				"          cnt,",
+				"          list",
+				"     ),",
+				"     skipDuplicateMapInputs: false,",
+				"     skipDuplicateMapOutputs: false) ~> flatten2",
+				"flatten2 foldDown(unroll(list.weather, list.weather),",
+				"     mapColumn(",
+				"          message,",
+				"          cod,",
+				"          city_id,",
+				"          calctime,",
+				"          cnt,",
+				"          list",
+				"     ),",
+				"     skipDuplicateMapInputs: false,",
+				"     skipDuplicateMapOutputs: false) ~> flatten3",
 				"select1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
