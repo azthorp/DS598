@@ -46,7 +46,7 @@
 				"     documentForm: 'documentPerLine') ~> source1",
 				"flatten derive(corrected_timestamp = iif(length(toString(timestamp)) == 10, toInteger(timestamp), toInteger(null())),",
 				"          location = 'Boston') ~> derivedColumn1",
-				"derivedColumn1 filter(ERROR_FUNCTION('')) ~> filter1",
+				"derivedColumn1 filter((!isNull(corrected_timestamp))&&(!isNull(aqi))) ~> filter1",
 				"filter1 derive() ~> derivedColumn2",
 				"derivedColumn2 select(skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
