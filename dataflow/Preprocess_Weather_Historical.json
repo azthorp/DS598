@@ -91,7 +91,7 @@
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> flatten2",
-				"flatten2 foldDown(unroll(list.weather, list.weather),",
+				"flatten2 foldDown(unroll(weather, weather),",
 				"     mapColumn(",
 				"          message,",
 				"          cod,",
