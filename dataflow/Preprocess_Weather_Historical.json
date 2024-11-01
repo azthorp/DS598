@@ -14,6 +14,10 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "silver_weather",
+						"type": "DatasetReference"
+					},
 					"name": "sink1"
 				}
 			],
@@ -55,8 +59,7 @@
 				"          location = 'Boston') ~> derivedColumn1",
 				"derivedColumn1 filter((!isNull(corrected_timestamp))&&(!isNull(temp))&&(!isNull(humidity))) ~> filter1",
 				"filter1 derive(date_time = toTimestamp(toLong(corrected_timestamp) * 1000),",
-				"          id = concat(location, toString(corrected_timestamp)),",
-				"          co = round(co,2)) ~> derivedColumn2",
+				"          id = concat(location, toString(corrected_timestamp))) ~> derivedColumn2",
 				"derivedColumn2 select(mapColumn(",
 				"          message,",
 				"          cod,",
@@ -117,6 +120,10 @@
 				"     skipDuplicateMapOutputs: false) ~> flatten3",
 				"select1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
