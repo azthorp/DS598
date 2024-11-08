@@ -802,6 +802,31 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/silver_weather')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "Silver",
+						"fileSystem": "thorpblob"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/weather')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -1210,19 +1235,22 @@
 						"          location = 'Boston') ~> derivedColumn1",
 						"derivedColumn1 filter((!isNull(corrected_timestamp))&&(!isNull(temp))&&(!isNull(humidity))) ~> filter1",
 						"filter1 derive(date_time = toTimestamp(toLong(corrected_timestamp) * 1000),",
-						"          id = concat(location, toString(corrected_timestamp))) ~> derivedColumn2",
+						"          id = concat(location, toString(corrected_timestamp)),",
+						"          temp_C = round(temp - 273.15, 2),",
+						"          temp_min_C = round(temp_min - 273.15, 2),",
+						"          temp_max_C = round(temp_max - 273.15, 2),",
+						"          feels_like_C = round(feels_like - 273.15, 2),",
+						"          temp_min_F = round((temp_min - 273.15) * 1.8 + 32, 2),",
+						"          temp_max_F = round((temp_max - 273.15) * 1.8 + 32, 0),",
+						"          feels_like_F = round((feels_like - 273.15) * 1.8 + 32, 0),",
+						"          lat = 42.3601,",
+						"          lon = -71.0589,",
+						"          weather_id_value = toInteger(id)) ~> derivedColumn2",
 						"derivedColumn2 select(mapColumn(",
-						"          message,",
-						"          cod,",
-						"          city_id,",
-						"          calctime,",
-						"          cnt,",
-						"          timestamp,",
-						"          cloud_all,",
-						"          corrected_timestamp,",
-						"          location,",
-						"          date_time,",
-						"          id",
+						"          temp_K = temp,",
+						"          feels_like_K = feels_like,",
+						"          temp_min_K = temp_min,",
+						"          temp_max_K = temp_max",
 						"     ),",
 						"     skipDuplicateMapInputs: true,",
 						"     skipDuplicateMapOutputs: true) ~> select1",
@@ -1282,31 +1310,6 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/weather')]",
 				"[concat(variables('factoryId'), '/datasets/silver_weather')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/silver_weather')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"folderPath": "Silver",
-						"fileSystem": "thorpblob"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
 			]
 		}
 	]
