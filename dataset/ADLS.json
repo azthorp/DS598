@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Bronze/data/2.5/history",
+				"folderPath": "Team3/HistoricalWeather",
 				"fileSystem": "thorpblob"
 			}
 		},
